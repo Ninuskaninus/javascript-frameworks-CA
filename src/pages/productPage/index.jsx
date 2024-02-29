@@ -19,10 +19,10 @@ function ProductPage() {
     }
 
     if (isLoading) {
-        return <div className="lds-loader-container"><Loader/></div>;;
+        return <div className="lds-loader-container"><Loader/></div>;
     }
 
-        const rating = data.rating;
+    const rating = data.rating;
     const ratingCircles = Array.from({ length: 5 }, (_, index) => (
         <span key={index} className={`rateCircle ${index < rating ? 'rateChecked' : ''}`}></span>
     ));
@@ -31,10 +31,9 @@ function ProductPage() {
     let price = data.price;
     let discount = data.discountedPrice;
     let saved = (price - discount).toFixed(0);
-    console.log(data);
 
     //review handling
-    const reviews = data.reviews.map((review) => (
+    let reviews = data.reviews.map((review) => (
         <ProductReview key={review.id}>
             <div className="product-item-review-top">
                 <h5>{review.username}</h5>
@@ -45,6 +44,10 @@ function ProductPage() {
             </div>
         </ProductReview>
     ));
+
+    if (reviews.length === 0) {
+        reviews = <p>No reviews yet</p>;   
+    }
 
     return (
         <div className="product-page-container">
@@ -62,8 +65,8 @@ function ProductPage() {
                         <p>{data.rating}/5</p>
                     </div>
                     <div className="product-item-price">
-                        <b>{ price }</b>
-                         {price !== discount && <p>{discount},-</p>}
+                        <b>{ discount }</b>
+                         {price !== discount && <p>{price},-</p>}
                     </div>
                     <div className="product-item-add">
                         <AddCart />
@@ -75,7 +78,6 @@ function ProductPage() {
              {reviews}
          </div>
         </div>
-        
     );
 }
 
