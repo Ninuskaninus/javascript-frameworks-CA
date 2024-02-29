@@ -5,6 +5,13 @@
     box-shadow: $boxShadow;
 }
 
+.product-card-container a{
+    width: 320px;
+    display: flex;
+    justify-content: center
+
+}
+
 .product-top{
         position: relative;
     img {
@@ -25,19 +32,6 @@
     }
 }
 
-.product-add-to-cart{
-    position: absolute;
-    top: 10px;
-    right: 0;
-    background-color: $white;
-    width: 40px;
-    box-shadow: $boxShadow;
-
-    img{
-        width: 20px;
-        height: 20px;
-    }
-}
 
 .product-read-more{
     position: absolute;
@@ -145,15 +139,7 @@
     }
  }
 
- .product-add-to-cart{
-    width: 25px;
-    height: 20px;
 
-    img{
-        width: 15px;
-        height: 15px;
-    }
- }
 
  .product-bottom{
     flex-direction: column;
@@ -201,9 +187,5 @@
         height: 100%;
     }
 
-         .product-add-to-cart {
-            display: none;
-                
-}
 
 }

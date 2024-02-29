@@ -7,7 +7,7 @@ import CheckoutPage from './pages/checkoutPage/index.jsx';
 import ProductPage from './pages/productPage/index.jsx';
 import ContactPage from './pages/contactPage/index.jsx';
 import CheckoutSuccessPage from './pages/checkoutSuccessPage/index.jsx';
-
+import Cart from './pages/cart/index.jsx';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/checkout/success" element={<CheckoutSuccessPage />} />

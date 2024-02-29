@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AddToCart from '../../img/addtocart.png';
 import PlaceholderImg from '../../img/placeholder-img.webp';
 import { Link } from 'react-router-dom';
 
@@ -35,9 +34,6 @@ export const ProductCard = ({ data }) => {
                             </p>
                         </div>
                     )}
-                    <button className="product-add-to-cart">
-                        <img src={AddToCart} alt="" />
-                    </button>
                     {isHovered && (
                         <button id="readMoreBtn" className="product-read-more secondary-btn">
                             Read more

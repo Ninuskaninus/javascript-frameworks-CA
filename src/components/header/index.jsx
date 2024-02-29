@@ -21,7 +21,7 @@ function Header() {
                             <img src={searcIcon} alt='Search'></img>
                         </button>
                     </form>
-                    <Link to="/checkout"><CartIconNav /></Link>
+                    <Link to="/cart"><CartIconNav /></Link>
                     <Link to="/contact"><img src={navContactIcon} alt='Contact'></img></Link>
                 </div>
             </div>

@@ -1,15 +1,16 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import ArrowBack from "../../img/arrow_back.png";
+import { useParams } from "react-router-dom";
 import PlaceholderImg from "../../img/placeholder-img.webp";
 import AddCart from "../../img/addCart.png";
 import { AddToCartButton, ProductReview } from "./index.styles";
 import { useFetch } from "../../hooks/useFetch";
 import Loader from "../../components/loader";
 import ErrorMessage from "../../components/error";
-
+import BackBtn from "../../components/buttons/backBtn";
 
 function ProductPage() {
+
+    //API handling
     const { id } = useParams();
     const { data, isLoading, isError } = useFetch(`https://v2.api.noroff.dev/online-shop/${id}`, true);
     
@@ -44,14 +45,10 @@ function ProductPage() {
             </div>
         </ProductReview>
     ));
+
     return (
         <div className="product-page-container">
-                <Link to="/">
-                    <div className="product-item-top">
-                    <img src={ArrowBack} alt="Back to homepage"></img>
-                    <p>Back</p>
-                    </div>
-            </Link>
+            <BackBtn />
             <div className="product-item-content">
                 <img src={data.image.url || PlaceholderImg} alt={ data.title } />
                 <div className="product-item-text">
