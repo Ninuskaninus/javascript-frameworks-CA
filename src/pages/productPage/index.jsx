@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import PlaceholderImg from "../../img/placeholder-img.webp";
-import AddCart from "../../img/addCart.png";
-import { AddToCartButton, ProductReview } from "./index.styles";
+import { ProductReview } from "./index.styles";
 import { useFetch } from "../../hooks/useFetch";
 import Loader from "../../components/loader";
 import ErrorMessage from "../../components/error";
 import BackBtn from "../../components/buttons/backBtn";
+import AddCart from "../../components/buttons/addToCart";
 
 function ProductPage() {
 
@@ -66,10 +66,7 @@ function ProductPage() {
                          {price !== discount && <p>{discount},-</p>}
                     </div>
                     <div className="product-item-add">
-                        <AddToCartButton>
-                            <img src={AddCart} alt="" />
-                            <p>Add to cart</p>
-                        </AddToCartButton>
+                        <AddCart />
                     </div>
                 </div>
             </div>

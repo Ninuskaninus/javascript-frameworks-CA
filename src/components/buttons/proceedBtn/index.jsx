@@ -1,11 +1,12 @@
 import React from "react";
-import { AddToCartButton } from "../../../pages/productPage/index.styles";
+import { GreenBtn } from "../index.styles";
 import { Link } from "react-router-dom";
+
 
 function ProceedBtn() {
     return (
         <Link to="/checkout">
-        <AddToCartButton><p>Proceed to chekout</p></AddToCartButton>
+        <GreenBtn><p>Proceed to chekout</p></GreenBtn>
         </Link>
             )
 }

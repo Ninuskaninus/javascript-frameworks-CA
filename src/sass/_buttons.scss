@@ -14,27 +14,4 @@ a{
 
 
 
-.main-btn{
-    background-color: $lime;
-    width: 200px;
-    height: 30px;
-    border-radius: $borderRadius;
-    margin: 0;
-    font-family: $suppFont;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: $primaryBlack;
-}
 
-.secondary-btn{
-    background-color: $white;
-    width: 200px;
-    height: 30px;
-    border-radius: $roundedRadius;
-    margin: 0;
-    font-family: $suppFont;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: $primaryBlack;
-    border: $primaryBlack 1px solid;
-}

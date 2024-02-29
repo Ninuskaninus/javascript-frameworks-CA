@@ -1,13 +1,12 @@
 import React from "react";
 import PlaceholderImg from "../../img/placeholder-img.webp";
-import DeleteIcon from "../../img/delete.png";
+import DeleteItem from "../buttons/deleteItem";
+
 
 function CartItemCard({ item }) {
     return (
          <div className="cart-item">
-                    <div className="cart-delete-item">
-                        <img src={DeleteIcon} alt="" />
-                    </div>
+                    <DeleteItem />
                     <img src={PlaceholderImg} alt="" />
                     <div className="cart-item-info">
                         <h3>Item name</h3>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PlaceholderImg from '../../img/placeholder-img.webp';
 import { Link } from 'react-router-dom';
+import ReadMoreItem from '../buttons/readmoreItem';
 
 
 export const ProductCard = ({ data }) => {
@@ -35,9 +36,7 @@ export const ProductCard = ({ data }) => {
                         </div>
                     )}
                     {isHovered && (
-                        <button id="readMoreBtn" className="product-read-more secondary-btn">
-                            Read more
-                        </button>
+                        <ReadMoreItem/>
                     )}
                 </div>
                 <div className="product-body">
