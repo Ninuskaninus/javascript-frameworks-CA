@@ -55,7 +55,7 @@ function ProductPage() {
             <div className="product-item-content">
                 <img src={data.image.url || PlaceholderImg} alt={ data.title } />
                 <div className="product-item-text">
-                    {saved > 0 && <div className="product-item-discount">SAVE { saved },-</div>}
+                    {saved > 0 && <div className="product-item-saved">SAVE { saved },-</div>}
                     <div className="product-item-description">
                         <h2>{ data.title }</h2>
                         <p>{ data.description }</p>

@@ -13,6 +13,7 @@ width: 100%;
 max-width: 200px;
 justify-content: center;
 heigth: 60px;
+margin-bottom: 30px;
 
 img{
     width: 20px;
@@ -34,7 +35,14 @@ export const ProductReview = styled.div`
 
     h5{
         margin: 0;
-        margin-bottom: 5px;
+        font-size: 1.2rem;
+    }
+
+    p{
+        margin: 0;
+        margin-top: 5px;
+        border-bottom: 1px solid #DFDFDF;
+        padding-bottom: 10px;
     }
 
 
