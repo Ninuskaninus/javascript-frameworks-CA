@@ -3,7 +3,7 @@ import React from "react";
 
 function ErrorMessage() {
     return (
-        <p>Couldnt load content ...</p>
+        <p>Couldn't load content ...</p>
     );
 }
 

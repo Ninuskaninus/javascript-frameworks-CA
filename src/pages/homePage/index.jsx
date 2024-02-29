@@ -9,7 +9,6 @@ import ErrorMessage from "../../components/error";
 
 function HomePage() {
     const { data, isLoading, isError } = useFetch("https://v2.api.noroff.dev/online-shop");
-    console.log(data);
     let content;
     if (isError) {
         content = <div className="lds-loader-container"><ErrorMessage/></div>;

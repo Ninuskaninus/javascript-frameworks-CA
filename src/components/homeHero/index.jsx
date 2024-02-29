@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Loader from "../loader";
 
 function HomeHero({ data, isLoading, isError }) {
-    const { imageUrl, title, description } = data || {}; 
+    const { imageUrl, title, description, id } = data || {}; 
     const item = data;
 
     if (!item) {
@@ -18,7 +18,7 @@ function HomeHero({ data, isLoading, isError }) {
                 <div className="hero-text-content">
                     <h1>{title}</h1>
                     <p>{description}</p>
-                    <Link to="*"><button className="main-btn">Read more</button></Link>
+                    <Link to={`product/${id}`}><button className="main-btn">Read more</button></Link>
                 </div>
             </div>
         );

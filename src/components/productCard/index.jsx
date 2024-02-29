@@ -3,6 +3,7 @@ import AddToCart from '../../img/addtocart.png';
 import PlaceholderImg from '../../img/placeholder-img.webp';
 import { Link } from 'react-router-dom';
 
+
 export const ProductCard = ({ data }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -18,7 +19,7 @@ export const ProductCard = ({ data }) => {
     ));
 
     return (
-        <Link to="*">
+        <Link to={`product/${data.id}`}>
             <div
                 id={data.id}
                 className="product-card"
