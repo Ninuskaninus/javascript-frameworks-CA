@@ -1,7 +1,7 @@
 import React from "react";
 import HomeHero from "../../components/homeHero";
 import HomeSecondHero from "../../components/homeSecondHero";
-import SearchContainer from "../../components/searchContainer";
+import SearchBar from "../../components/searchBar";
 import Loader from "../../components/loader";
 import ProductCard from "../../components/productCard";
 import { useFetch } from "../../hooks/useFetch";
@@ -41,7 +41,7 @@ function HomePage() {
             <div className="home-second-hero-container">
                {heroContent2}
             </div>
-            <SearchContainer />
+            <SearchBar />
         <div className="product-card-container">
             {content}
         </div>
