@@ -21,7 +21,7 @@ export const CartBtnNav = styled.div`
 
         p{
             margin: 0;
-            font-family: ';
+            font-family: 'Encode Sans Condensed', sans-serif;
             font-size: 0.8rem;
             font-weight: 600;
         }
