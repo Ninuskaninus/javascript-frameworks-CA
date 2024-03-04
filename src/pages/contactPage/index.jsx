@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GreenBtn } from "../../components/buttons/index.styles";
 import { ContactForm, ContactFormContainer, ContactFormInput, ContactPageContainer } from "./index.styles";
+import BackBtn from "../../components/buttons/backBtn/index";
 
 function ContactPage() {
     const [formData, setFormData] = useState({
@@ -59,6 +60,7 @@ function ContactPage() {
 
     return (
         <div className="contact-page-container">
+            <BackBtn />
             <ContactPageContainer>
                 <ContactForm onSubmit={handleSubmit}>
                     <h2>Contact us</h2>
@@ -85,7 +87,7 @@ function ContactPage() {
                         </ContactFormInput>
                     </ContactFormContainer>
                     <div>
-                        <GreenBtn type="submit">Send message</GreenBtn>
+                        <GreenBtn type="submit"><p>Send message</p></GreenBtn>
                     </div>
                 </ContactForm>
             </ContactPageContainer>
