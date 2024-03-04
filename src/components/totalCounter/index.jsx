@@ -17,7 +17,11 @@ function TotalCounter() {
     const totalSaved = itemsInCart.reduce((acc, item) => acc + (item.price - item.discount), 0);
     const savedPrice = totalSaved.toFixed(2);
 
-
+    if (isError || !data) {
+        return <div className="lds-loader-container"><p>Error</p></div>;
+    } if (isLoading) {
+        return <div className="lds-loader-container"></div>;
+    } else
 
     return (
         <TotalCounterContainer className="total-counter">

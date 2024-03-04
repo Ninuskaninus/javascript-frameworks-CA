@@ -12,7 +12,7 @@ function AddCart() {
 
         if (!item) {
             cartItems.push({ id });
-            localStorage.setItem("cart", JSON.stringify(cartItems)); // Store all cart items under the key "cart"
+            localStorage.setItem("cart", JSON.stringify(cartItems)); 
         }
     };
 

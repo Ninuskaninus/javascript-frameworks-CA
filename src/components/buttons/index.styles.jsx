@@ -10,10 +10,11 @@ padding: 10px;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 8px;
 width: 100%;
-max-width: 200px;
+max-width: 300px;
 justify-content: center;
 heigth: 60px;
 margin-bottom: 30px;
+
 
 img{
     width: 20px;
@@ -55,6 +56,10 @@ export const SecondaryBtn = styled.button`
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+
+    @media (max-width: 700px) {
+        display: none;
+    }
 
 
     img{

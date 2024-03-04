@@ -34,11 +34,6 @@ function CartItemCard() {
                             )}
                         </div>
                     </div>
-                    <div className="cart-item-counter">
-                        <button>-</button>
-                        <p>1</p>
-                        <button>+</button>
-                    </div>
                 </div>
             ))}
         </div>

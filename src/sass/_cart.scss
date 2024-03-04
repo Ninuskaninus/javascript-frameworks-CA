@@ -8,6 +8,10 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
+
+    @media screen and (max-width: 547px){
+        padding: 0px;
+    }
 }
 
 .cart-head{
@@ -50,6 +54,12 @@
             height: 200px;
             object-fit: cover;
         }
+        @media screen and (max-width: 547px) {
+            img{
+                display: none;
+            }
+  
+        }
 }
 
 .cart-item-counter{
@@ -84,6 +94,7 @@
 
 .cart-item-info{
     width: 100%;
+    padding: 10px;
     h3{
         font-size: 1.5rem;
         margin: 0;

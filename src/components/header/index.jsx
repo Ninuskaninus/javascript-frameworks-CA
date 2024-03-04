@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <>
-            <div className='trendz-header-container'>
+
+            <header className='trendz-header-container'>
             <nav className='trendz-header'>
             <div className='trendz-header-content'>
                 <Link to="/"><img src={logoImg} alt='Trendz Logo' /></Link>
@@ -26,7 +26,7 @@ function Header() {
                 </div>
             </div>
         </nav>
- </div></>
+ </header>
     
     )
 
