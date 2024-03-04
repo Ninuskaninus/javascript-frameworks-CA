@@ -1,14 +1,19 @@
+import React from 'react';
 import navCartIcon from '../../img/shopping_bag.png';
-
+import { CartBtnNav } from './index.styles';
+import { useCart } from "../../components/cartContext/index"; 
 
 function CartIconNav() {
-    return <button className='cart-icon-nav'>
-        <div className='cart-icon-counter'>
-            <p id='cartCounter'>10</p>
-        </div>
-        <img src={navCartIcon} alt='Cart icon'></img>
-    </button>
-    
+  const { cartCount } = useCart(); 
+
+  return (
+    <CartBtnNav>
+      <div className='cart-icon-counter'>
+        <p>{cartCount}</p>
+      </div>
+      <img src={navCartIcon} alt='Cart icon' />
+    </CartBtnNav>
+  );
 }
 
 export default CartIconNav;

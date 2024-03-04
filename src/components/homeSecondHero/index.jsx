@@ -3,6 +3,7 @@ import PlaceholderImg from "../../img/placeholder-img.webp";
 import { Link } from "react-router-dom";
 import ErrorMessage from "../error";
 import Loader from "../loader";
+import ReadMoreHero from "../buttons/readmoreHero";
 
 function HomeSecondHero({ data, isLoading, isError }) {
     const { imageUrl, title, description, id } = data || {}; 
@@ -21,9 +22,11 @@ function HomeSecondHero({ data, isLoading, isError }) {
                 </div>
                 <img src={imageUrl || PlaceholderImg} alt="" />
                 <div className="hero-btn-container">
-                    <Link to={`product/${id}`}><button className="main-btn">Read more</button></Link>
+                    <Link to={`product/${id}`}>
+                        <ReadMoreHero />
+                    </Link>
                 </div>
-                    </div>
+            </div>
         </Link>
         
     );

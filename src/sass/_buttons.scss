@@ -12,55 +12,6 @@ a{
 
 }
 
-.cart-icon-nav {
-    position: relative;
 
-    .cart-icon-counter{
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        background-color: $white;
-        color: $primaryBlack;
-        border-radius: 50%;
-        font-size: 12px;
-        width: 18px;
-        height: 18px;
-        padding: 3px;
-        box-sizing: border-box;
-        display: none;
-        justify-content: center;
-        align-items: center;
 
-        p{
-            margin: 0;
-            font-family: $suppFont;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-    }
-}
 
-.main-btn{
-    background-color: $lime;
-    width: 200px;
-    height: 30px;
-    border-radius: $borderRadius;
-    margin: 0;
-    font-family: $suppFont;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: $primaryBlack;
-}
-
-.secondary-btn{
-    background-color: $white;
-    width: 200px;
-    height: 30px;
-    border-radius: $roundedRadius;
-    margin: 0;
-    font-family: $suppFont;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: $primaryBlack;
-    border: $primaryBlack 1px solid;
-}

@@ -1,15 +1,16 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import ArrowBack from "../../img/arrow_back.png";
+import { useParams } from "react-router-dom";
 import PlaceholderImg from "../../img/placeholder-img.webp";
-import AddCart from "../../img/addCart.png";
-import { AddToCartButton, ProductReview } from "./index.styles";
+import { ProductReview } from "./index.styles";
 import { useFetch } from "../../hooks/useFetch";
 import Loader from "../../components/loader";
 import ErrorMessage from "../../components/error";
-
+import BackBtn from "../../components/buttons/backBtn";
+import AddCart from "../../components/buttons/addToCart";
 
 function ProductPage() {
+
+    //API handling
     const { id } = useParams();
     const { data, isLoading, isError } = useFetch(`https://v2.api.noroff.dev/online-shop/${id}`, true);
     
@@ -18,10 +19,10 @@ function ProductPage() {
     }
 
     if (isLoading) {
-        return <div className="lds-loader-container"><Loader/></div>;;
+        return <div className="lds-loader-container"><Loader/></div>;
     }
 
-        const rating = data.rating;
+    const rating = data.rating;
     const ratingCircles = Array.from({ length: 5 }, (_, index) => (
         <span key={index} className={`rateCircle ${index < rating ? 'rateChecked' : ''}`}></span>
     ));
@@ -30,10 +31,9 @@ function ProductPage() {
     let price = data.price;
     let discount = data.discountedPrice;
     let saved = (price - discount).toFixed(0);
-    console.log(data);
 
     //review handling
-    const reviews = data.reviews.map((review) => (
+    let reviews = data.reviews.map((review) => (
         <ProductReview key={review.id}>
             <div className="product-item-review-top">
                 <h5>{review.username}</h5>
@@ -44,14 +44,14 @@ function ProductPage() {
             </div>
         </ProductReview>
     ));
+
+    if (reviews.length === 0) {
+        reviews = <p>No reviews yet</p>;   
+    }
+
     return (
         <div className="product-page-container">
-                <Link to="/">
-                    <div className="product-item-top">
-                    <img src={ArrowBack} alt="Back to homepage"></img>
-                    <p>Back</p>
-                    </div>
-            </Link>
+            <BackBtn />
             <div className="product-item-content">
                 <img src={data.image.url || PlaceholderImg} alt={ data.title } />
                 <div className="product-item-text">
@@ -65,14 +65,11 @@ function ProductPage() {
                         <p>{data.rating}/5</p>
                     </div>
                     <div className="product-item-price">
-                        <b>{ price }</b>
-                         {price !== discount && <p>{discount},-</p>}
+                        <b>{ discount }</b>
+                         {price !== discount && <p>{price},-</p>}
                     </div>
                     <div className="product-item-add">
-                        <AddToCartButton>
-                            <img src={AddCart} alt="" />
-                            <p>Add to cart</p>
-                        </AddToCartButton>
+                        <AddCart />
                     </div>
                 </div>
             </div>
@@ -81,7 +78,6 @@ function ProductPage() {
              {reviews}
          </div>
         </div>
-        
     );
 }
 

@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <>
-            <div className='trendz-header-container'>
+
+            <header className='trendz-header-container'>
             <nav className='trendz-header'>
             <div className='trendz-header-content'>
                 <Link to="/"><img src={logoImg} alt='Trendz Logo' /></Link>
@@ -21,12 +21,12 @@ function Header() {
                             <img src={searcIcon} alt='Search'></img>
                         </button>
                     </form>
-                    <Link to="/checkout"><CartIconNav /></Link>
+                    <Link to="/cart"><CartIconNav /></Link>
                     <Link to="/contact"><img src={navContactIcon} alt='Contact'></img></Link>
                 </div>
             </div>
         </nav>
- </div></>
+ </header>
     
     )
 

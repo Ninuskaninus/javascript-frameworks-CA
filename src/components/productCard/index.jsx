@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import AddToCart from '../../img/addtocart.png';
 import PlaceholderImg from '../../img/placeholder-img.webp';
 import { Link } from 'react-router-dom';
+import ReadMoreItem from '../buttons/readmoreItem';
 
 
 export const ProductCard = ({ data }) => {
@@ -35,13 +35,8 @@ export const ProductCard = ({ data }) => {
                             </p>
                         </div>
                     )}
-                    <button className="product-add-to-cart">
-                        <img src={AddToCart} alt="" />
-                    </button>
                     {isHovered && (
-                        <button id="readMoreBtn" className="product-read-more secondary-btn">
-                            Read more
-                        </button>
+                        <ReadMoreItem/>
                     )}
                 </div>
                 <div className="product-body">
@@ -51,8 +46,8 @@ export const ProductCard = ({ data }) => {
                             <p>{data.description}</p>
                         </div>
                         <div className="product-price">
-                            <b>{price},-</b>
-                            {price !== discount && <p className="price-before">{discount},-</p>}
+                            <b>{discount},-</b>
+                            {price !== discount && <p className="price-before">{price},-</p>}
                         </div>
                     </div>
                     <div className="product-rating">{ratingCircles}</div>
