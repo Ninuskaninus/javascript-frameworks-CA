@@ -1,9 +1,15 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    // Initialize cart count from local storage
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartCount(cartItems.length);
+  }, []);
 
   const updateCartCount = () => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];

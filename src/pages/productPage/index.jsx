@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PlaceholderImg from "../../img/placeholder-img.webp";
 import { ProductReview } from "./index.styles";
@@ -9,12 +9,19 @@ import BackBtn from "../../components/buttons/backBtn";
 import AddCart from "../../components/buttons/addToCart";
 
 function ProductPage() {
+    const [productData, setProductData] = useState();
 
     //API handling
     const { id } = useParams();
     const { data, isLoading, isError } = useFetch(`https://v2.api.noroff.dev/online-shop/${id}`, true);
-    
-    if (isError || !data) {
+
+    useEffect(() => {
+        if (data) {
+            setProductData(data);
+        }
+    }, [data]);
+
+    if (isError || !productData) {
         return <div className="lds-loader-container"><ErrorMessage/></div>;
     }
 
@@ -22,18 +29,18 @@ function ProductPage() {
         return <div className="lds-loader-container"><Loader/></div>;
     }
 
-    const rating = data.rating;
+    const rating = productData.rating;
     const ratingCircles = Array.from({ length: 5 }, (_, index) => (
         <span key={index} className={`rateCircle ${index < rating ? 'rateChecked' : ''}`}></span>
     ));
 
     //price handling
-    let price = data.price;
-    let discount = data.discountedPrice;
+    let price = productData.price;
+    let discount = productData.discountedPrice;
     let saved = (price - discount).toFixed(0);
 
     //review handling
-    let reviews = data.reviews.map((review) => (
+    let reviews = productData.reviews.map((review) => (
         <ProductReview key={review.id}>
             <div className="product-item-review-top">
                 <h5>{review.username}</h5>
@@ -53,16 +60,16 @@ function ProductPage() {
         <div className="product-page-container">
             <BackBtn />
             <div className="product-item-content">
-                <img src={data.image.url || PlaceholderImg} alt={ data.title } />
+                <img src={productData.image.url || PlaceholderImg} alt={ productData.title } />
                 <div className="product-item-text">
                     {saved > 0 && <div className="product-item-saved">SAVE { saved },-</div>}
                     <div className="product-item-description">
-                        <h2>{ data.title }</h2>
-                        <p>{ data.description }</p>
+                        <h2>{ productData.title }</h2>
+                        <p>{ productData.description }</p>
                     </div>
                     <div className="product-item-rating">
                         <div className="product-rating no-padding">{ratingCircles}</div>
-                        <p>{data.rating}/5</p>
+                        <p>{productData.rating}/5</p>
                     </div>
                     <div className="product-item-price">
                         <b>{ discount }</b>

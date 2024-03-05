@@ -8,7 +8,7 @@ function BackBtn() {
        
     <BackBtnContainer className="product-item-top">
        <Link to="/">
-                <img src={ArrowBack} alt="Back to homepage"></img>
+        <img src={ArrowBack} alt="Back to homepage"></img>
         <p>Back</p>
         </Link>
         </BackBtnContainer>
