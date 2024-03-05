@@ -5,12 +5,14 @@ import { BackBtnContainer } from "./index.styles";
 
 function BackBtn() {
   return (
-        <Link to="/">
-            <BackBtnContainer className="product-item-top">
+       
+    <BackBtnContainer className="product-item-top">
+       <Link to="/">
                 <img src={ArrowBack} alt="Back to homepage"></img>
-                <p>Back</p>
-        </BackBtnContainer>
+        <p>Back</p>
         </Link>
+        </BackBtnContainer>
+        
   );
 }
 
