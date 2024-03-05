@@ -7,6 +7,7 @@ import ErrorMessage from "../../components/error";
 import BackBtn from "../../components/buttons/backBtn";
 import { SuccessContainer, SuccessItems, CheckoutSuccessContainer } from "./index.styles";
 import { CartProvider } from "../../components/cartContext/index";
+import { Helmet } from "react-helmet";
 
 
 function Checkout() {
@@ -40,6 +41,9 @@ function Checkout() {
 
     return (
         <CheckoutSuccessContainer>
+            <Helmet>
+                <title>Checkout | Trendz</title>
+            </Helmet>
             {redirect && window.location.replace('/checkoutSuccess')}
             <BackBtn />
             <SuccessContainer className="success-container">

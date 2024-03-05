@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { GreenBtn } from "../../components/buttons/index.styles";
-import { ContactForm, ContactFormContainer, ContactFormInput, ContactPageContainer } from "./index.styles";
+import { ContactPageContent, ContactForm, ContactFormContainer, ContactFormInput, ContactPageContainer } from "./index.styles";
 import BackBtn from "../../components/buttons/backBtn/index";
+import { Helmet } from "react-helmet";
 
 function ContactPage() {
     const [formData, setFormData] = useState({
@@ -60,8 +61,11 @@ function ContactPage() {
 
     return (
         <ContactPageContainer>
+            <Helmet>
+                <title>Contact | Trendz</title>
+            </Helmet>
             <BackBtn />
-            <ContactPageContainer>
+            <ContactPageContent>
                 <ContactForm onSubmit={handleSubmit}>
                     <h2>Contact us</h2>
                     <ContactFormContainer>
@@ -90,7 +94,7 @@ function ContactPage() {
                         <GreenBtn type="submit"><p>Send message</p></GreenBtn>
                     </div>
                 </ContactForm>
-            </ContactPageContainer>
+            </ContactPageContent>
         </ContactPageContainer>
     );
 }
