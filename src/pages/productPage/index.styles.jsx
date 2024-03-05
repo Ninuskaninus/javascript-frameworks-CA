@@ -88,14 +88,14 @@ export const ProductItemDescription = styled.div`
 `;
 
 export const ProductItemRating = styled.div`
+    width: auto;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    height: auto;
+    justify-content: flex-start;
+    gap: 5px;
     align-items: center;
-    p{
-        margin: 0;
     
+    @media screen and (max-width: 700px) {
+        padding: 10px;
     }
 `;
 

@@ -9,6 +9,7 @@ import BackBtn from "../../components/buttons/backBtn";
 import AddCart from "../../components/buttons/addToCart";
 
 
+
 function ProductPage() {
     const [productData, setProductData] = useState();
 
@@ -69,7 +70,7 @@ function ProductPage() {
                         <p>{ productData.description }</p>
                     </ProductItemDescription>
                     <ProductItemRating>
-                        <div className="product-rating">{ratingCircles}</div>
+                        {ratingCircles}
                         <p>{productData.rating}/5</p>
                     </ProductItemRating>
                     <ProductItemPrice>
