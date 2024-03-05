@@ -6,7 +6,8 @@ import Loader from "../../components/loader";
 import ProductCard from "../../components/productCard";
 import { useFetch } from "../../hooks/useFetch";
 import ErrorMessage from "../../components/error";
-import {ProductCardContainer, HeroContainer, HomeContainer, HeroSecondContainer } from "./index.styles";
+import { ProductCardContainer, HeroContainer, HomeContainer, HeroSecondContainer } from "./index.styles";
+import { Helmet } from "react-helmet";
 
 
 
@@ -38,6 +39,9 @@ function HomePage() {
 
     return (
         <HomeContainer>
+            <Helmet>
+                <title>Home | Trendz</title>
+            </Helmet>
             <HeroContainer>
                 {heroContent1}
             </HeroContainer>

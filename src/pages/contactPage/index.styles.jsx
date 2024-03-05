@@ -2,12 +2,23 @@ import styled from "styled-components";
 
 export const ContactPageContainer = styled.div`
     width: 100%;
-    max-width: 720px;
+
     padding: 50px;
     min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
         @media screen and (max-width: 425px) {
             padding: 10px;
         }
+`;
+
+export const ContactPageContent = styled.div`
+width: 100%;
+    max-width: 720px;
+display: flex;
+flex-direction: column;
+align-items: center;
 `;
 
 export const ContactForm = styled.form`
@@ -54,4 +65,9 @@ export const ContactFormInput = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 10px 0;
+
+    span{
+        margin-top: 10px;
+        color: red;
+    }
 `;

@@ -2,10 +2,14 @@ import React from "react";
 import BackBtn from "../../components/buttons/backBtn";
 import CartItemCard from "../../components/cartItemCard";
 import TotalCounter from "../../components/totalCounter";
-import {CartTotalContainer, CartPageContainer,CartContainer, CartItemContainer, CartHeadContainer} from "./index.styles";
+import {ContactPageContent, CartTotalContainer, CartPageContainer,CartContainer, CartItemContainer, CartHeadContainer} from "./index.styles";
+import { Helmet } from "react-helmet";
 
 function Cart() {
     return <CartPageContainer>
+        <Helmet>
+            <title>Cart | Trendz</title>
+        </Helmet>
         <BackBtn />
         <CartContainer>
             <CartHeadContainer>
