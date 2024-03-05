@@ -33,7 +33,7 @@ function HomePage() {
         heroContent2 = <div className="lds-loader-container"><Loader/></div>;
     } else {
         heroContent1 = <HomeHero data={data[0]} />;
-        heroContent2 = <HomeSecondHero data={data[1]} />;
+        heroContent2 = <HomeSecondHero data={data[1]}/>;
     }
 
     return (
