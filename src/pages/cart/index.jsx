@@ -2,25 +2,25 @@ import React from "react";
 import BackBtn from "../../components/buttons/backBtn";
 import CartItemCard from "../../components/cartItemCard";
 import TotalCounter from "../../components/totalCounter";
-
+import {CartTotalContainer, CartPageContainer,CartContainer, CartItemContainer, CartHeadContainer} from "./index.styles";
 
 function Cart() {
-    return <div className="cart-page-container">
+    return <CartPageContainer>
         <BackBtn />
-        <div className="cart-container">
-            <div className="cart-head">
+        <CartContainer>
+            <CartHeadContainer>
                 <h2>Your items</h2>
-            </div>
-            <div className="cart-items-container">
+            </CartHeadContainer>
+            <CartItemContainer>
                 <CartItemCard />
-            </div>
-            <div className="cart-total-container">
+            </CartItemContainer>
+            <CartTotalContainer>
                 <h2>Your total</h2>
                 <TotalCounter />
-            </div>
+            </CartTotalContainer>
 
-        </div>
-  </div>;
+        </CartContainer>
+  </CartPageContainer>;
 }
 
 export default Cart;

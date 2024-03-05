@@ -4,22 +4,23 @@ import logoImg from '../../img/trendz-logo-green.png';
 import navContactIcon from '../../img/contact_support.png';
 import CartIconNav from '../cartIconNav/index.jsx';
 import { Link } from 'react-router-dom';
+import {NavLinks, HeaderContainer, Nav, NavContainer} from './index.styles.jsx';
 
 
 function Header() {
     return (
 
-            <header className='trendz-header-container'>
-            <nav className='trendz-header'>
-            <div className='trendz-header-content'>
+            <HeaderContainer>
+            <Nav>
+            <NavContainer>
                 <Link to="/"><img src={logoImg} alt='Trendz Logo' /></Link>
-                <div className='trendz-header-content-right'>
+                <NavLinks>
                     <Link to="/cart"><CartIconNav /></Link>
                     <Link to="/contact"><img src={navContactIcon} alt='Contact'></img></Link>
-                </div>
-            </div>
-        </nav>
- </header>
+                </NavLinks>
+            </NavContainer>
+        </Nav>
+ </HeaderContainer>
     
     )
 

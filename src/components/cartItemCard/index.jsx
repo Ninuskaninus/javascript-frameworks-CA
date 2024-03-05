@@ -4,6 +4,7 @@ import DeleteItem from "../buttons/deleteItem";
 import { useFetch } from "../../hooks/useFetch";
 import Loader from "../loader";
 import ErrorMessage from "../error";
+import {CartItem, CartItemInfo,CartPriceContainer} from "./index.styles";
 
 function CartItemCard() {
     const { data, isLoading, isError } = useFetch("https://v2.api.noroff.dev/online-shop/");
@@ -21,20 +22,20 @@ function CartItemCard() {
     return (
         <div>
             {itemsInCart.map(item => (
-                <div id={item.id} key={item.id} className="cart-item">
+                <CartItem id={item.id} key={item.id}>
                     <DeleteItem />
                     <img src={item.imageUrl || PlaceholderImg} alt={item.title} />
-                    <div className="cart-item-info">
+                    <CartItemInfo>
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>
-                        <div className="cart-price">
+                        <CartPriceContainer>
                             <b>{item.discount}</b>
                             {item.discount !== item.price && (
                                 <p>{item.price},-</p>
                             )}
-                        </div>
-                    </div>
-                </div>
+                        </CartPriceContainer>
+                    </CartItemInfo>
+                </CartItem>
             ))}
         </div>
     );

@@ -1,5 +1,19 @@
 import styled from "styled-components";
 
+export const CheckoutSuccessContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+    padding: 0 20px;
+    min-height: 80vh;
+    width: 100%;
+
+    a{
+        width: 100%;
+    }
+`;
+
 export const SuccessContainer = styled.div`
     background-color: #E6F9AF;
     padding: 50px;

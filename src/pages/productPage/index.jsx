@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PlaceholderImg from "../../img/placeholder-img.webp";
-import { ProductReview } from "./index.styles";
+import { ProductRatingText, ProductRating, ProductReviewTop, ProductItemReviewContainer, ProductItemPrice, ProductItemRating, ProductItemDescription, ProductItemSaved, ProductItemText, ProductReview, ProductPageContainer, ProductItemContent } from "./index.styles";
 import { useFetch } from "../../hooks/useFetch";
 import Loader from "../../components/loader";
 import ErrorMessage from "../../components/error";
 import BackBtn from "../../components/buttons/backBtn";
 import AddCart from "../../components/buttons/addToCart";
+
 
 function ProductPage() {
     const [productData, setProductData] = useState();
@@ -42,13 +43,13 @@ function ProductPage() {
     //review handling
     let reviews = productData.reviews.map((review) => (
         <ProductReview key={review.id}>
-            <div className="product-item-review-top">
+            <ProductReviewTop>
                 <h5>{review.username}</h5>
-                <div className="product-rating no-padding">{ratingCircles}</div>
-            </div>
-            <div className="product-item-review-body">
+                <ProductRating>{ratingCircles}</ProductRating>
+            </ProductReviewTop>
+            <ProductRatingText>
                 <p>{review.description}</p>
-            </div>
+            </ProductRatingText>
         </ProductReview>
     ));
 
@@ -57,34 +58,34 @@ function ProductPage() {
     }
 
     return (
-        <div className="product-page-container">
+        <ProductPageContainer>
             <BackBtn />
-            <div className="product-item-content">
+            <ProductItemContent>
                 <img src={productData.image.url || PlaceholderImg} alt={ productData.title } />
-                <div className="product-item-text">
-                    {saved > 0 && <div className="product-item-saved">SAVE { saved },-</div>}
-                    <div className="product-item-description">
+                <ProductItemText>
+                    {saved > 0 && <ProductItemSaved>SAVE { saved },-</ProductItemSaved>}
+                    <ProductItemDescription>
                         <h2>{ productData.title }</h2>
                         <p>{ productData.description }</p>
-                    </div>
-                    <div className="product-item-rating">
-                        <div className="product-rating no-padding">{ratingCircles}</div>
+                    </ProductItemDescription>
+                    <ProductItemRating>
+                        <div className="product-rating">{ratingCircles}</div>
                         <p>{productData.rating}/5</p>
-                    </div>
-                    <div className="product-item-price">
+                    </ProductItemRating>
+                    <ProductItemPrice>
                         <b>{ discount }</b>
                          {price !== discount && <p>{price},-</p>}
-                    </div>
-                    <div className="product-item-add">
+                    </ProductItemPrice>
+                    <>
                         <AddCart />
-                    </div>
-                </div>
-            </div>
-         <div className="product-item-review-container">
+                    </>
+                </ProductItemText>
+            </ProductItemContent>
+         <ProductItemReviewContainer>
              <h3>Reviews</h3>
              {reviews}
-         </div>
-        </div>
+         </ProductItemReviewContainer>
+        </ProductPageContainer>
     );
 }
 

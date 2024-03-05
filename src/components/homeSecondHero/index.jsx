@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ErrorMessage from "../error";
 import Loader from "../loader";
 import ReadMoreHero from "../buttons/readmoreHero";
+import {HeroSecondTextContainer, HeroSecondContainer,HeroBtnContainer} from "./index.styles";
 
 function HomeSecondHero({ data, isLoading, isError }) {
     const { imageUrl, title, description, id } = data || {}; 
@@ -15,18 +16,18 @@ function HomeSecondHero({ data, isLoading, isError }) {
     } else {
             return (
         <Link to={`product/${data.id}`}>
-            <div className="home-second-hero">
-                <div className="hero-text-content">
+            <HeroSecondContainer>
+                <HeroSecondTextContainer>
                 <h1>{ title}</h1>
                 <p>{description }</p>
-                </div>
+                </HeroSecondTextContainer>
                 <img src={imageUrl || PlaceholderImg} alt="" />
-                <div className="hero-btn-container">
+                <HeroBtnContainer>
                     <Link to={`product/${id}`}>
                         <ReadMoreHero />
                     </Link>
-                </div>
-            </div>
+                </HeroBtnContainer>
+            </HeroSecondContainer>
         </Link>
         
     );
