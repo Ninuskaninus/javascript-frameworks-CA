@@ -50,7 +50,7 @@ export const ProductCard = ({ data }) => {
                             {price !== discount && <p className="price-before">{price},-</p>}
                         </div>
                     </div>
-                    <div className="product-rating">{ratingCircles}</div>
+                    <div className="product-rating">{ratingCircles} {data.rating}/5</div>
                 </div>
             </div>
         </Link>
