@@ -2,7 +2,7 @@ import React from "react";
 import BackBtn from "../../components/buttons/backBtn";
 import CartItemCard from "../../components/cartItemCard";
 import TotalCounter from "../../components/totalCounter";
-import {ContactPageContent, CartTotalContainer, CartPageContainer,CartContainer, CartItemContainer, CartHeadContainer} from "./index.styles";
+import {CartTotalContainer, CartPageContainer,CartContainer, CartItemContainer, CartHeadContainer} from "./index.styles";
 import { Helmet } from "react-helmet";
 
 function Cart() {
