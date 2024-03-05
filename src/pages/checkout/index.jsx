@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { GreenBtn } from "../../components/buttons/index.styles";
 import { useFetch } from "../../hooks/useFetch";
@@ -6,18 +6,28 @@ import Loader from "../../components/loader";
 import ErrorMessage from "../../components/error";
 import BackBtn from "../../components/buttons/backBtn";
 import { SuccessContainer, SuccessItems } from "./index.styles";
+import { CartProvider } from "../../components/cartContext/index";
+
 
 function Checkout() {
     const { data, isLoading, isError } = useFetch("https://v2.api.noroff.dev/online-shop/");
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItems = useMemo(() => JSON.parse(localStorage.getItem('cart')) || [], []);
     const itemsInCart = data.filter(item => cartItems.some(cartItem => cartItem.id === item.id));
 
     const [redirect, setRedirect] = useState(false);
 
     const handleButtonClick = () => {
-            localStorage.removeItem('cart');
+        localStorage.removeItem('cart');
+            CartProvider();
             setRedirect(true);
     };
+
+    useEffect(() => {
+        if (cartItems.length === 0) {
+            CartProvider();
+        }
+    }, [cartItems]);
+
 
 
     if (isError || !data) {
