@@ -6,7 +6,7 @@ import Loader from "../../components/loader";
 import ProductCard from "../../components/productCard";
 import { useFetch } from "../../hooks/useFetch";
 import ErrorMessage from "../../components/error";
-import {ProductCardContainer, HeroContainer, HomeContainer, HeroSecondContainer } from"./index.styles.jsx";
+import {ProductCardContainer, HeroContainer, HomeContainer, HeroSecondContainer } from "./index.styles";
 
 
 
