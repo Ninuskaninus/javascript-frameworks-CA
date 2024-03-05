@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PlaceholderImg from '../../img/placeholder-img.webp';
 import { Link } from 'react-router-dom';
 import ReadMoreItem from '../buttons/readmoreItem';
+import {ProductRating, ProductPrice, ProductInfo, ProductBottom, ProductCardItem, ProductCardTop, ProductDiscount} from './index.styles';
 
 export const ProductCard = ({ data }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -22,39 +23,38 @@ export const ProductCard = ({ data }) => {
 
     return (
         <Link to={`product/${productData?.id}`}>
-            <div
+            <ProductCardItem
                 id={productData?.id}
-                className="product-card"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <div className="product-top">
+                <ProductCardTop>
                     <img src={productData?.imageUrl || PlaceholderImg} alt="" />
                     {saved > 0 && (
-                        <div className="product-discount">
+                        <ProductDiscount>
                             <p>
                                 Save <span>{saved},-</span>
                             </p>
-                        </div>
+                        </ProductDiscount>
                     )}
                     {isHovered && <ReadMoreItem />}
-                </div>
-                <div className="product-body">
-                    <div className="product-bottom">
-                        <div className="product-information">
+                </ProductCardTop>
+                <div>
+                    <ProductBottom>
+                        <ProductInfo>
                             <h4>{productData?.title}</h4>
                             <p>{productData?.description}</p>
-                        </div>
-                        <div className="product-price">
+                        </ProductInfo>
+                        <ProductPrice>
                             <b>{discount},-</b>
                             {price !== discount && <p className="price-before">{price},-</p>}
-                        </div>
-                    </div>
-                    <div className="product-rating">
+                        </ProductPrice>
+                    </ProductBottom>
+                    <ProductRating>
                         {ratingCircles} {productData?.rating}/5
-                    </div>
+                    </ProductRating>
                 </div>
-            </div>
+            </ProductCardItem>
         </Link>
     );
 };

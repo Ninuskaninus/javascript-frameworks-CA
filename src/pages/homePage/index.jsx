@@ -6,6 +6,9 @@ import Loader from "../../components/loader";
 import ProductCard from "../../components/productCard";
 import { useFetch } from "../../hooks/useFetch";
 import ErrorMessage from "../../components/error";
+import {ProductCardContainer, HeroContainer, HomeContainer, HeroSecondContainer } from"./index.styles.jsx";
+
+
 
 function HomePage() {
     const { data, isLoading, isError } = useFetch("https://v2.api.noroff.dev/online-shop");
@@ -34,18 +37,18 @@ function HomePage() {
     }
 
     return (
-        <div className="home-page-container">
-            <div className="home-hero-container">
+        <HomeContainer>
+            <HeroContainer>
                 {heroContent1}
-            </div>
-            <div className="home-second-hero-container">
+            </HeroContainer>
+            <HeroSecondContainer>
                {heroContent2}
-            </div>
+            </HeroSecondContainer>
             <SearchBar />
-        <div className="product-card-container">
+        <ProductCardContainer>
             {content}
-        </div>
-        </div>
+        </ProductCardContainer>
+        </HomeContainer>
     );
 }
 

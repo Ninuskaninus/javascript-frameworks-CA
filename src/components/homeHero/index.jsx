@@ -3,6 +3,7 @@ import PlaceholderImg from "../../img/placeholder-img.webp";
 import { Link } from "react-router-dom";
 import Loader from "../loader";
 import ReadMoreHero from "../buttons/readmoreHero";
+import {HeroTopContainer, HeroTopTextContainer} from "./index.styles.jsx";
 
 function HomeHero({ data, isLoading, isError }) {
     const { imageUrl, title, description, id } = data || {}; 
@@ -14,16 +15,16 @@ function HomeHero({ data, isLoading, isError }) {
         return <div className="lds-loader-container"><Loader/></div>;
     } else {
         return (
-            <div className="home-hero">
+            <HeroTopContainer>
                 <img src={imageUrl || PlaceholderImg} alt="" />
-                <div className="hero-text-content">
+                <HeroTopTextContainer>
                     <h1>{title}</h1>
                     <p>{description}</p>
                     <Link to={`product/${id}`}>
                         <ReadMoreHero />
                     </Link>
-                </div>
-            </div>
+                </HeroTopTextContainer>
+            </HeroTopContainer>
         );
     }
 

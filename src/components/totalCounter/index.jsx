@@ -24,14 +24,14 @@ function TotalCounter() {
     } else
 
     return (
-        <TotalCounterContainer className="total-counter">
-            <div className="total-list">
+        <TotalCounterContainer>
+            <div>
                 <TotalItem>
                     <p>Items</p>
                     <p>{totalItems}</p>
                 </TotalItem>
                 <TotalItem>
-                    <p>Amout saved</p>
+                    <p>Amount saved</p>
                     <p>- {savedPrice},-</p>
                 </TotalItem>
                 <TotalPrice>

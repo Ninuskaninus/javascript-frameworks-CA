@@ -12,7 +12,7 @@ export const SearchContainer = styled.div`
     margin-top: 20px;
     flex-direction: column;
     padding: 20px 0;
-    @media screen and (max-width: 497px){
+    @media screen and (max-width: 550px){
         padding: 0 20px;
 
         h2{
@@ -46,8 +46,8 @@ export const SearchForm = styled.form`
     }
     
 
-@media screen and (max-width: 497px){
-    width: 100%;
+@media screen and (max-width: 550px){
+    width: 95%;
 }`;
 
 export const Suggested = styled.div`
@@ -59,6 +59,10 @@ export const Suggested = styled.div`
     gap: 10px;
     display: flex;
     }
+
+    @media screen and (max-width: 500px){
+    width: 95%;
+}
 `;
 
 

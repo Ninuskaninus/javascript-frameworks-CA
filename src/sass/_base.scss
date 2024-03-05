@@ -5,31 +5,4 @@
 
 
 
-.contact-page-container, .cart-page-container, .checkout-success-page-container, .product-page-container, .home-page-container, .checkout-page-container{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    flex-direction: column;
-    padding: 0 20px;
-    min-height: 80vh;
-    width: 100%;
 
-    a{
-        width: 100%;
-    }
-}
-
-
-
-.product-card-container{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}

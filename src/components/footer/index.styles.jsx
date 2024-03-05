@@ -1,5 +1,7 @@
-.footer-container{
-    background-color: $lime;
+import styled from "styled-components";
+
+export const FooterContainer = styled.div`
+    background-color: #E6F9AF;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -10,9 +12,9 @@
     img{
         height: 45px;
     }
-}
+`;
 
-.footer-link, .footer-copyright{
+export const FooterLink = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -25,16 +27,7 @@
     }
 
     img{
-        height: 25px;
-        width: 25px;
+        height: 15px;
+        width: 15px;
     }
-}
-
-.footer-copyright img{
-    width: 18px;
-    height: 18px;
-}
-
-.footer-copyright {
-    margin-top: 30px;
-}
+`;

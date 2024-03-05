@@ -59,7 +59,7 @@ function ContactPage() {
     };
 
     return (
-        <div className="contact-page-container">
+        <ContactPageContainer>
             <BackBtn />
             <ContactPageContainer>
                 <ContactForm onSubmit={handleSubmit}>
@@ -91,7 +91,7 @@ function ContactPage() {
                     </div>
                 </ContactForm>
             </ContactPageContainer>
-        </div>
+        </ContactPageContainer>
     );
 }
 

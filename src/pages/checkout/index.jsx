@@ -5,7 +5,7 @@ import { useFetch } from "../../hooks/useFetch";
 import Loader from "../../components/loader";
 import ErrorMessage from "../../components/error";
 import BackBtn from "../../components/buttons/backBtn";
-import { SuccessContainer, SuccessItems } from "./index.styles";
+import { SuccessContainer, SuccessItems, CheckoutSuccessContainer } from "./index.styles";
 import { CartProvider } from "../../components/cartContext/index";
 
 
@@ -39,7 +39,7 @@ function Checkout() {
     }
 
     return (
-        <div className="checkout-success-page-container">
+        <CheckoutSuccessContainer>
             {redirect && window.location.replace('/checkoutSuccess')}
             <BackBtn />
             <SuccessContainer className="success-container">
@@ -50,14 +50,14 @@ function Checkout() {
                     ))}
                 </SuccessItems>
             </SuccessContainer>
-            <div className="success-bottom">
+            <div>
                 <Link to="/checkoutSuccess" onClick={handleButtonClick}>
                     <GreenBtn>
                         <p>Buy items</p>
                     </GreenBtn>
                 </Link>
             </div>
-        </div>
+        </CheckoutSuccessContainer>
     );
 }
 
