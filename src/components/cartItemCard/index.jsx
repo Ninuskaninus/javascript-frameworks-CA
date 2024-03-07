@@ -1,6 +1,5 @@
 import React from "react";
 import PlaceholderImg from "../../img/placeholder-img.webp";
-import DeleteItem from "../buttons/deleteItem";
 import { useFetch } from "../../hooks/useFetch";
 import Loader from "../loader";
 import ErrorMessage from "../error";
@@ -23,7 +22,6 @@ function CartItemCard() {
         <div>
             {itemsInCart.map(item => (
                 <CartItem id={item.id} key={item.id}>
-                    <DeleteItem />
                     <img src={item.imageUrl || PlaceholderImg} alt={item.title} />
                     <CartItemInfo>
                         <h3>{item.title}</h3>
