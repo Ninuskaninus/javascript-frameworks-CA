@@ -7,7 +7,7 @@ import ReadMoreHero from "../buttons/readmoreHero";
 import {HeroSecondTextContainer, HeroSecondContainer,HeroBtnContainer} from "./index.styles";
 
 function HomeSecondHero({ data, isLoading, isError }) {
-    const { imageUrl, title, description, id } = data || {}; 
+    const { imageUrl, title, description } = data || {}; 
     const item = data;
     if (!item) {
         return isError ? null : <div className="lds-loader-container"><ErrorMessage/></div>;
@@ -23,9 +23,7 @@ function HomeSecondHero({ data, isLoading, isError }) {
                 </HeroSecondTextContainer>
                 <img src={imageUrl || PlaceholderImg} alt="" />
                 <HeroBtnContainer>
-                    <Link to={`product/${id}`}>
                         <ReadMoreHero />
-                    </Link>
                 </HeroBtnContainer>
             </HeroSecondContainer>
         </Link>
