@@ -7,7 +7,7 @@ import Loader from "../../components/loader";
 import ErrorMessage from "../../components/error";
 import BackBtn from "../../components/buttons/backBtn";
 import AddCart from "../../components/buttons/addToCart";
-import { Helmet } from "react-helmet";
+import { Helmet  } from "react-helmet";
 
 
 
@@ -61,9 +61,11 @@ function ProductPage() {
 
     return (
         <ProductPageContainer>
+
             <Helmet>
                 <title>{productData.title} | Trendz</title>
             </Helmet>
+
             <BackBtn />
             <ProductItemContent>
                 <img src={productData.image.url || PlaceholderImg} alt={ productData.title } />
