@@ -1,4 +1,4 @@
-# eCom Store
+# Trendz - Javascript frameworks
 
 ![screenshot of webpage](./src/img/trendz.png)
 
