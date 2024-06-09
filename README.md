@@ -23,22 +23,20 @@ To get a local copy up and running, follow these simple steps:
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/your_username/ecom-store.git
+   git clone https://github.com/Ninuskaninus/javascript-frameworks-CA.git
    ```
 
-2. **Navigate to the project directory**:
-```sh
-cd https://github.com/Ninuskaninus/javascript-frameworks-CA.git
-```
-
-3. **install dependencies**:
+2. **install dependencies**:
 ```sh
 npm install
 ```
 
-4. **Start the development server**:
+3. **Start the development server**:
 ```sh
 npm start
 ```
 
+## Contact
+[LinkedIn](https://www.linkedin.com/in/nina-amdal-a289a719a/)
+[Github](https://github.com/Ninuskaninus)
 
